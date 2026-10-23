@@ -1,0 +1,144 @@
+/* AirQuality.css */
+.aqi-card {
+  padding: 24px 26px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  transition: transform 0.2s ease;
+}
+.aqi-card:hover { transform: translateY(-2px); }
+
+.aqi-heading-icon { color: #a78bfa; background: rgba(167, 139, 250, 0.1); }
+
+/* Score */
+.aqi-score-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.aqi-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  background: var(--border);
+  padding: 8px 14px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.aqi-number {
+  font: 700 30px "Manrope", sans-serif;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+}
+.aqi-label-text {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.aqi-status {
+  margin: 0 0 4px;
+  font: 700 16px "Manrope", sans-serif;
+}
+.aqi-desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Color coding */
+.aqi-good    .aqi-status, .aqi-good    .aqi-number { color: #4ade80; }
+.aqi-fair    .aqi-status, .aqi-fair    .aqi-number { color: #a3e635; }
+.aqi-moderate .aqi-status, .aqi-moderate .aqi-number { color: #facc15; }
+.aqi-poor    .aqi-status, .aqi-poor    .aqi-number { color: #fb923c; }
+.aqi-very-poor .aqi-status, .aqi-very-poor .aqi-number { color: #f87171; }
+
+/* Progress bar */
+.aqi-bar-track {
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  margin: 18px 0 6px;
+  overflow: visible;
+}
+
+.aqi-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #4ade80, #a3e635, #facc15, #fb923c, #f87171);
+  transition: width 0.6s ease;
+}
+
+.aqi-tick-marks {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0%;
+}
+
+.aqi-tick {
+  width: 4px;
+  height: 12px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.aqi-tick-active {
+  background: white;
+  box-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+.aqi-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-subtle);
+  font-size: 9px;
+  margin-bottom: 16px;
+}
+
+/* Pollutants */
+.pollutants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.pollutant-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--input-bg);
+  border-radius: 10px;
+  padding: 10px 11px;
+}
+
+.pollutant-label {
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.pollutant-value {
+  font: 700 16px "Manrope", sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+}
+
+.pollutant-unit {
+  color: var(--text-subtle);
+  font-size: 8px;
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .aqi-card { padding: 20px 18px 16px; }
+  .pollutants-grid { grid-template-columns: repeat(2, 1fr); }
+}

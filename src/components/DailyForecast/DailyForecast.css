@@ -1,0 +1,106 @@
+/* DailyForecast.css */
+.forecast-section { margin-top: 30px; }
+
+.forecast-caption {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.forecast-card {
+  min-width: 0;
+  padding: 16px 10px 14px;
+  text-align: center;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  transition: transform 0.2s ease, border-color 0.2s, background 0.2s;
+}
+.forecast-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.4);
+  background: var(--card-bg-hover);
+}
+
+.forecast-day {
+  margin: 0 0 4px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.forecast-card img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 2px;
+  filter: drop-shadow(0 3px 10px rgba(167, 139, 250, 0.2));
+}
+
+.forecast-temp {
+  display: block;
+  font: 700 24px "Manrope", sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.6px;
+}
+
+.forecast-condition {
+  min-height: 26px;
+  margin: 4px 0 8px;
+  color: var(--text-muted);
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.forecast-hl {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.forecast-hi {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #ffb56b;
+}
+.forecast-lo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: #73baff;
+}
+
+.rain-chance {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #83baff;
+  font-size: 9px;
+}
+
+.forecast-footnote {
+  margin: 12px 0 0;
+  color: var(--text-subtle);
+  font-size: 10px;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .forecast-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .forecast-grid { grid-template-columns: repeat(2, 1fr); }
+  .forecast-card:last-child { grid-column: 1 / -1; }
+}

@@ -1,0 +1,62 @@
+/* WeatherDetails.css */
+.details-section { margin-top: 30px; }
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.metric-card {
+  min-height: 126px;
+  border-radius: 16px;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  transition: transform 0.2s ease, border-color 0.2s;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+.metric-highlight {
+  border-color: rgba(255, 185, 90, 0.3);
+  background: linear-gradient(135deg, rgba(255, 155, 60, 0.06), var(--card-bg));
+}
+
+.metric-top {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.metric-icon { display: grid; place-items: center; color: #b7a8ff; }
+.metric-label { color: var(--text-muted); font-size: 10px; font-weight: 600; }
+
+.metric-value {
+  display: block;
+  margin-bottom: 5px;
+  font: 700 21px "Manrope", sans-serif;
+  letter-spacing: -0.6px;
+  color: var(--text-primary);
+}
+
+.metric-note {
+  margin: 0;
+  color: var(--text-subtle);
+  font-size: 9px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 850px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .metrics-grid { gap: 10px; }
+  .metric-card { min-height: 112px; padding: 13px 13px 11px; }
+  .metric-value { font-size: 18px; }
+}

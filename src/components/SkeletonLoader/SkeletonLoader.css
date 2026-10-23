@@ -1,0 +1,93 @@
+/* SkeletonLoader.css */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+.skeleton-bone {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 25%,
+    var(--skeleton-shine) 50%,
+    var(--skeleton-base) 75%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* Layout containers */
+.skeleton-wrapper { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
+
+.skeleton-card {
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skeleton-main-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 16px;
+}
+
+/* Bone sizes */
+.bone-tag    { height: 10px; width: 110px; border-radius: 4px; }
+.bone-city   { height: 26px; width: 180px; }
+.bone-date   { height: 10px; width: 130px; border-radius: 4px; }
+
+.skeleton-temp-row { display: flex; gap: 20px; align-items: center; }
+.bone-temp   { height: 80px; width: 130px; border-radius: 12px; }
+.skeleton-icon-block { display: flex; flex-direction: column; gap: 8px; }
+.bone-icon   { height: 60px; width: 60px; border-radius: 50%; }
+.bone-cond   { height: 10px; width: 90px; border-radius: 4px; }
+.bone-feels  { height: 9px; width: 70px; border-radius: 4px; }
+.bone-hl     { height: 9px; width: 100%; border-radius: 4px; }
+
+.skeleton-sun { min-height: 200px; }
+.bone-title  { height: 18px; width: 140px; }
+.bone-arc    { height: 60px; border-radius: 12px; }
+.skeleton-sun-times { display: flex; justify-content: space-between; }
+.bone-time   { height: 30px; width: 80px; border-radius: 8px; }
+
+/* Hourly row */
+.skeleton-hourly {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+}
+.skeleton-hour {
+  min-width: 78px;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 10px;
+  border-radius: 16px;
+}
+.bone-time-sm  { height: 9px; width: 40px; border-radius: 4px; }
+.bone-hour-icon{ height: 42px; width: 42px; border-radius: 50%; }
+.bone-hour-temp{ height: 16px; width: 38px; }
+
+/* Metrics grid */
+.skeleton-metrics {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.skeleton-metric { min-height: 110px; }
+.bone-big-val { height: 22px; width: 70px; }
+.bone-note    { height: 9px; width: 80px; border-radius: 4px; }
+
+/* Responsive */
+@media (max-width: 1100px) { .skeleton-metrics { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 850px) {
+  .skeleton-main-grid { grid-template-columns: 1fr; }
+  .skeleton-metrics { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .skeleton-metrics { grid-template-columns: repeat(2, 1fr); }
+  .skeleton-hourly .skeleton-hour:nth-child(n+7) { display: none; }
+}

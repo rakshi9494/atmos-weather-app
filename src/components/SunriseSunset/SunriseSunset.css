@@ -1,0 +1,117 @@
+/* SunriseSunset.css */
+.sun-card {
+  border-radius: 22px;
+  padding: 25px 26px 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  transition: transform 0.25s ease;
+}
+.sun-card:hover { transform: translateY(-2px); }
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.heading-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 11px;
+  color: #f9c77e;
+  background: rgba(249, 199, 126, 0.1);
+  flex-shrink: 0;
+}
+
+/* Arc */
+.sun-visual { margin-top: 20px; }
+
+.sun-arc {
+  position: relative;
+  height: 60px;
+  margin: 0 8px 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.sun-arc::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: -66px;
+  height: 120px;
+  border: 1px dashed rgba(167, 139, 250, 0.4);
+  border-radius: 50% 50% 0 0;
+}
+
+.sun-ball {
+  position: absolute;
+  bottom: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 40% 40%, #ffe070, #ffb840);
+  box-shadow: 0 0 22px rgba(255, 185, 90, 0.8);
+  transition: left 0.6s ease;
+}
+
+/* Times row */
+.sun-times {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  gap: 8px;
+}
+
+.sun-time-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sun-icon { color: #f9c77e; flex-shrink: 0; }
+
+.sun-time-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sun-label {
+  color: var(--text-subtle);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sun-time-item strong,
+.sun-duration strong {
+  color: var(--text-primary);
+  font: 600 14px "Manrope", sans-serif;
+}
+
+.sun-duration {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.sun-note {
+  margin: 15px 0 0;
+  color: var(--text-subtle);
+  font-size: 10px;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .sun-card { padding: 22px 20px 18px; border-radius: 18px; }
+  .sun-times { flex-wrap: wrap; }
+}

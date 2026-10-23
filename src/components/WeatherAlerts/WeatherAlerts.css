@@ -1,0 +1,96 @@
+/* WeatherAlerts.css */
+.alerts-wrapper {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alert-card {
+  border-radius: 14px;
+  background: rgba(153, 27, 27, 0.15);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  overflow: hidden;
+  animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  cursor: pointer;
+}
+
+.alert-icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(248, 113, 113, 0.2);
+  color: #fca5a5;
+  flex-shrink: 0;
+}
+
+.alert-meta { flex: 1; min-width: 0; }
+
+.alert-event {
+  margin: 0 0 3px;
+  color: #fca5a5;
+  font: 600 13px "Manrope", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alert-sender {
+  color: rgba(255, 200, 200, 0.6);
+  font-size: 10px;
+}
+
+.alert-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.alert-expand-btn,
+.alert-dismiss-btn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: none;
+  background: rgba(255,255,255,0.07);
+  color: #fca5a5;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.alert-expand-btn:hover,
+.alert-dismiss-btn:hover { background: rgba(255,255,255,0.13); }
+
+.alert-description {
+  margin: 0;
+  padding: 0 16px 14px;
+  color: rgba(255, 210, 210, 0.85);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.alert-times {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 8px 16px 14px;
+  color: rgba(255, 200, 200, 0.55);
+  font-size: 10px;
+  border-top: 1px solid rgba(248, 113, 113, 0.2);
+}
